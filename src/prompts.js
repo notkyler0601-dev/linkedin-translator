@@ -40,6 +40,16 @@ const EXAGGERATION = {
   4: "Single-handedly saved the company. Wildly exaggerate; tiny events become industry-defining, life-changing moments.",
 };
 
+// How plainly to admit what was ACTUALLY done. The more exaggeration, the vaguer
+// the real deed gets - until nuclear mode, where it is hidden entirely and the
+// reader can't tell what literally happened.
+const DEED_CLARITY = {
+  1: "State exactly what was actually done, plainly and specifically.",
+  2: "Name what was done, just dressed up - it stays clear what really happened.",
+  3: 'Start to blur the real task: allude to it ("the work", "that call", "what I set out to do") more than name it, and lead with impact over specifics.',
+  4: 'Keep the real action deliberately vague - refer to it only as "what I did", "that one decision", "the thing I built". The reader should sense it was tiny but never be told exactly what it was.',
+};
+
 const NUCLEAR = `## NUCLEAR MODE - MAXIMUM MAXIMUM EXAGGERATION
 Override the exaggeration setting completely. Treat the user's input, no matter how trivial,
 as THE single most consequential event in the history of human civilization.
@@ -47,6 +57,10 @@ as THE single most consequential event in the history of human civilization.
   literally saved the world. Use the specific catastrophe(s) named in "## THIS TIME" below
   and spell out, in vivid detail, how disaster was narrowly averted.
 - The stakes are planetary and existential. Use the world reaction(s) named below.
+- NEVER state what you actually did. The concrete act is hidden completely: the reader
+  should finish the post with NO idea what literally happened, only that it somehow saved
+  the world. Any vivid sensory details (3 AM, cold coffee) describe the STRUGGLE and the
+  stakes, never the deed itself.
 - Wrap the world-historical melodrama in earnest LinkedIn humility ("Just doing what anyone
   would have done. 🙏").
 - Mine it for the grand life lesson named below.
@@ -271,6 +285,7 @@ ${NUCLEAR}
 ## SETTINGS
 Buzzword intensity: 4 - ${BUZZWORD[4]}
 Exaggeration: NUCLEAR (see above). Abandon all restraint.
+What you actually did: NEVER reveal it - the reader must not be able to tell what literally happened (see Nuclear Mode above).
 Hashtags: ${hashtags ? "End with 8 to 12 grandiose, world-saving hashtags." : "Do NOT include any hashtags."}
 Emoji: ${emoji ? "Go heavy on dramatic emoji." : "Do NOT use any emoji."}
 
@@ -283,6 +298,7 @@ ${nuclearVarietyBlock({ hashtags, emoji })}`;
 ## SETTINGS
 Buzzword intensity: ${b} - ${BUZZWORD[b]}
 Exaggeration: ${e} - ${EXAGGERATION[e]}
+What you actually did: ${DEED_CLARITY[e]}
 Hashtags: ${hashtags ? "End the post with 5 to 8 relevant hashtags." : "Do NOT include any hashtags."}
 Emoji: ${emoji ? "Sprinkle relevant emoji throughout (especially the hook and any list lines)." : "Do NOT use any emoji."}
 
