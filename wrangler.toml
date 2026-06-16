@@ -1,6 +1,7 @@
 name = "linkedin-translator"
 main = "src/index.js"
 compatibility_date = "2025-01-01"
+account_id = "08f1318968aab02535127a7537e33549"
 
 # Workers AI binding -> env.AI.run(...)
 [ai]
