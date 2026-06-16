@@ -1,0 +1,21 @@
+name = "linkedin-translator"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+# Workers AI binding -> env.AI.run(...)
+[ai]
+binding = "AI"
+
+# Static UI in ./public served from the same origin (no CORS needed) -> env.ASSETS
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# Switch the model in ONE place. Other good options:
+#   @cf/meta/llama-4-scout-17b-16e-instruct   (fast, clean instruct, no reasoning leak)
+#   @cf/meta/llama-3.3-70b-instruct-fp8-fast  (proven, solid)
+#   @cf/qwen/qwen3-30b-a3b-fp8                (fast & cheap, has a thinking mode)
+# Reasoning models (gpt-oss, qwen3) are handled in src/index.js: the Worker normalizes
+# their stream and drops chain-of-thought so only the final post reaches the browser.
+[vars]
+MODEL = "@cf/openai/gpt-oss-120b"
