@@ -46,8 +46,8 @@ const EXAGGERATION = {
 const DEED_CLARITY = {
   1: "State exactly what was actually done, plainly and specifically.",
   2: "Name what was done, just dressed up - it stays clear what really happened.",
-  3: 'Start to blur the real task: allude to it ("the work", "that call", "what I set out to do") more than name it, and lead with impact over specifics.',
-  4: 'Keep the real action deliberately vague - refer to it only as "what I did", "that one decision", "the thing I built". The reader should sense it was tiny but never be told exactly what it was.',
+  3: 'Start to blur the real task: allude to it ("the work", "that call", "what I set out to do") more than name it, and lead with impact over specifics. Do not open by restating the literal action.',
+  4: 'Keep the real action deliberately vague. Do NOT restate the user\'s literal action anywhere - never name the actual task. Refer to it only as "what I did", "that one decision", "the thing I built". The reader should sense it was tiny but never be told exactly what it was.',
 };
 
 const NUCLEAR = `## NUCLEAR MODE - MAXIMUM MAXIMUM EXAGGERATION
